@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiBuddy - Your Digital Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Welcome to DigiBuddy</h1>
+            <p>Your friendly digital assistant ready to help 24/7</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro-section">
+            <h2>How DigiBuddy Can Help You</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Instant Answers</h3>
+                    <p>Get quick responses to your questions anytime</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Tech Support</h3>
+                    <p>Troubleshoot common digital problems</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Digital Learning</h3>
+                    <p>Learn new tech skills at your own pace</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="chat-section">
+            <h2>Chat with DigiBuddy</h2>
+                <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+                <df-messenger
+                  intent="WELCOME"
+                  chat-title="DigiBuddy"
+                  agent-id="77899877-9e42-4dc4-b93b-f7dac8672616"
+                  language-code="en"
+                ></df-messenger>
+            <div class="chat-tips">
+                <p>Try asking:</p>
+                <ul>
+                    <li>"How do I set up email on my phone?"</li>
+                    <li>"What's the best way to stay safe online?"</li>
+                    <li>"Can you help me with video calls?"</li>
+                </ul>
+            </div>
+        </section>
+    </main>s
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2023 DigiBuddy Digital Assistant</p>
+            <p class="small-text">Powered by Dialogflow AI technology</p>
+        </div>
+    </footer>
+</body>
+</html>
