@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiBuddy - Your Digital Assistant</title>
+    <title>TechWise – Helping minds grow digitally</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
+
     <header>
         <div class="header-content">
-            <h1>Welcome to DigiBuddy</h1>
-            <p>Your friendly digital assistant ready to help 24/7</p>
+            <h1>Tech Wise</h1>
+            <p class="tagline">Empowering Digital Literacy!</p>
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="#tutorials">Tutorials</a>
+                <a href="#chat">AI Chat</a>
+                <a href="#feedback">Feedback</a>
+            </nav>
         </div>
     </header>
 
+</body>
+</html>
+
     <main class="container">
-        <section class="intro-section">
-            <h2>How DigiBuddy Can Help You</h2>
+
+        <!-- Home Section -->
+        <section id="home" class="intro-section">
+            <h2>How We Can Help You</h2>
             <div class="features">
                 <div class="feature-card">
                     <div class="feature-icon">💡</div>
@@ -36,15 +49,45 @@
             </div>
         </section>
 
-        <section class="chat-section">
+        <!-- Tutorials Section -->
+        <section id="tutorials" class="tutorials-section">
+            <h2>Tutorials</h2>
+            <div class="tutorials-grid">
+                <div class="tutorial-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/y3EdIiJeTXk" 
+                                title="WhatsApp Tutorial"
+                                allowfullscreen></iframe>
+                    </div>
+                    <h3>Using WhatsApp</h3>
+                    <p>Step-by-step video guide to connect with friends and family.</p>
+                </div>
+                <div class="tutorial-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/TIa7AgEmX2g" 
+                                title="Paytm Tutorial"
+                                allowfullscreen></iframe>
+                    </div>
+                    <h3>Using Paytm</h3>
+                    <p>Learn digital payments and how to keep your money safe.</p>
+                </div>
+                <div class="tutorial-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/tui9hq9lfsU?si=Lk_dMnp49icqYJKj" 
+                                title="Google Maps Tutorial"
+                                allowfullscreen></iframe>
+                    </div>
+                    <h3>Using Google Maps</h3>
+                    <p>Navigate easily to any location using your phone.</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- AI Chat Section -->
+        <section id="chat" class="chat-section">
             <h2>Chat with DigiBuddy</h2>
-                <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-                <df-messenger
-                  intent="WELCOME"
-                  chat-title="DigiBuddy"
-                  agent-id="77899877-9e42-4dc4-b93b-f7dac8672616"
-                  language-code="en"
-                ></df-messenger>
+            <div class="chatbot-pointer">Need help? Chat with our AI assistant anytime using the button in the corner!</div>
             <div class="chat-tips">
                 <p>Try asking:</p>
                 <ul>
@@ -54,13 +97,113 @@
                 </ul>
             </div>
         </section>
-    </main>s
+
+        <!-- Update your accessibility controls section like this -->
+<section class="accessibility-section">
+    <h2>Accessibility Options</h2>
+    <div class="accessibility-controls">
+        <button id="fontDecrease" title="Decrease text size">A-</button>
+        <button id="fontReset" title="Reset text size">A</button>
+        <button id="fontIncrease" title="Increase text size">A+</button>
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="ta">Tamil</option>
+        </select>
+        <button onclick="alert('Voice command coming soon!')">🎙️ Voice Command</button>
+    </div>
+</section>
+
+        <!-- Feedback Section -->
+        <section id="feedback" class="feedback-section">
+            <h2>We Value Your Feedback</h2>
+            <form action="#" method="POST" class="feedback-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Feedback:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+    </main>
 
     <footer>
         <div class="footer-content">
-            <p>© 2023 DigiBuddy Digital Assistant</p>
+            <p>© 2025 TechWise Digital Literacy Help</p>
             <p class="small-text">Powered by Dialogflow AI technology</p>
         </div>
     </footer>
+
+    <!-- DialogFlow Chat Widget - Now available site-wide -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+        intent="WELCOME"
+        chat-title="DigiBuddy"
+        agent-id="77899877-9e42-4dc4-b93b-f7dac8672616"
+        language-code="en"
+    ></df-messenger>
+
+    <script>
+        // Font size functions
+        function increaseFont() {
+            document.body.style.fontSize = "larger";
+        }
+        function decreaseFont() {
+            document.body.style.fontSize = "smaller";
+        }
+        
+        // Scroll to top on refresh
+        window.onbeforeunload = function() {
+            window.scrollTo(0, 0);
+        };
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+    </script>
+    <script>
+        // Font size controls with localStorage persistence
+        document.addEventListener('DOMContentLoaded', function() {
+            const html = document.documentElement;
+            const fontIncrease = document.getElementById('fontIncrease');
+            const fontDecrease = document.getElementById('fontDecrease');
+            const fontReset = document.getElementById('fontReset');
+            
+            // Initialize font size (check localStorage or use default 100%)
+            let currentFontSize = parseInt(localStorage.getItem('fontSize')) || 100;
+            html.style.fontSize = currentFontSize + '%';
+            
+            // Increase font size (max 150%)
+            fontIncrease.addEventListener('click', function() {
+                if (currentFontSize < 150) {
+                    currentFontSize += 10;
+                    html.style.fontSize = currentFontSize + '%';
+                    localStorage.setItem('fontSize', currentFontSize);
+                }
+            });
+            
+            // Decrease font size (min 80%)
+            fontDecrease.addEventListener('click', function() {
+                if (currentFontSize > 80) {
+                    currentFontSize -= 10;
+                    html.style.fontSize = currentFontSize + '%';
+                    localStorage.setItem('fontSize', currentFontSize);
+                }
+            });
+            
+            // Reset font size
+            fontReset.addEventListener('click', function() {
+                currentFontSize = 100;
+                html.style.fontSize = currentFontSize + '%';
+                localStorage.setItem('fontSize', currentFontSize);
+            });
+        });
+        </script>
+
 </body>
 </html>
