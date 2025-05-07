@@ -569,7 +569,7 @@ input, textarea, select, button {
 
         header {
             position: relative;
-            background-image: url('images/header-bg.png'); /* ← ADD your image path here */
+            background-image: url('header-bg.png.png'); /* ← ADD your image path here */
             background-size: cover;
             background-position: center;
             color: white;
